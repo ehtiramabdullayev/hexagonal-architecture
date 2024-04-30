@@ -3,6 +3,7 @@ package org.example.bootstrap;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import org.example.adapter.in.rest.AddStudentController;
+import org.example.adapter.in.rest.GetAllStudentsController;
 
 import static spark.Spark.before;
 import static spark.Spark.get;
@@ -20,9 +21,11 @@ public class Main {
 
     public static void initRoutes() {
         Injector injector = Guice.createInjector(new ApplicationBinding());
-        AddStudentController controller = injector.getInstance(AddStudentController.class);
+        AddStudentController addStudentController = injector.getInstance(AddStudentController.class);
+        GetAllStudentsController getAllStudentsController = injector.getInstance(GetAllStudentsController.class);
         get("/hello", (req, res) -> "Hello Code Nomads");
-        post("/api/students", controller::addStudent);
+        post("/api/students", addStudentController::addStudent);
+        get("/api/students", getAllStudentsController::getAllStudents);
 
     }
 }

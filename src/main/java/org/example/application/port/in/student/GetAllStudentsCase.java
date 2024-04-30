@@ -1,4 +1,9 @@
 package org.example.application.port.in.student;
 
-public class GetAllStudentsCase {
+import org.example.model.student.Student;
+
+import java.util.List;
+
+public interface GetAllStudentsCase {
+    List<Student> getAllStudents();
 }
