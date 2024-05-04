@@ -25,5 +25,4 @@ public class GetAllStudentsController {
         response.type("application/json");
         return jsonParser.toJsonPOJO(allStudents);
     }
-
 }
