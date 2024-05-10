@@ -13,7 +13,7 @@ import static spark.Spark.port;
 import static spark.Spark.post;
 
 public class Main {
-    public static final int MAIN_PORT = 5555;
+    public static final int MAIN_PORT = 5556;
 
     public static void main(String[] args) {
         port(MAIN_PORT);
